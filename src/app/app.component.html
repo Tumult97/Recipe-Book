@@ -1,0 +1,10 @@
+<app-header (optionSelectedEmitter)="onOptionSelected($event)" [optionSelected]="optionSelected"></app-header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes *ngIf="optionSelected == 'recipes'"></app-recipes>
+      <app-shopping-list *ngIf="optionSelected == 'shopping'"></app-shopping-list>
+    </div>
+  </div>
+</div>

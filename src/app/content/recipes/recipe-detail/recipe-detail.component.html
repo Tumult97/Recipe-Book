@@ -1,0 +1,85 @@
+<div class="panel panel-default">
+  <div class="panel-heading" style="display: flex; justify-content: center">
+    <img src="{{recipe.imagePath}}" alt="{{recipe.name}}" class="img-responsive" style="max-height: 10em; height: 10em;">
+  </div>
+  <div class="panel-body">
+    <h2 class="card-title">
+      {{recipe.name}}
+    </h2>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="btn-group" appDropdown>
+          <button
+            class="btn btn-info dropdown-toggle"
+            type="button">
+            Manage Recipe
+            <span>
+              <i class="fa-solid fa-caret-down"></i>
+            </span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#" (click)="sendIngredientsToShoppingList()">To Shopping list</a></li>
+            <li><a href="#">Edit Recipe</a></li>
+            <li><a href="#">Delete Recipe</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="padding-top: 2em; padding-bottom: 2em">
+      <div class="col-xs-12">
+        {{recipe.description}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <ul class="list-group">
+          <li class="list-group-item"
+              *ngFor="let item of recipe.ingredients">
+            <input type="checkbox" class="form-check-input">
+            {{item.amount}}{{item.type}} - {{item.name}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="row">
+  <div class="col-xs-12">
+    <img src="" alt="" class="img-responsive">
+  </div>
+</div>
+<div class="row">
+  <div class="col-sx-12">
+    <h1>Recipe Name</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group">
+      <button
+        class="btn btn-info dropdown-toggle"
+        type="button">
+        Manage Recipe
+        <span>
+          <i class="fa-solid fa-caret-down"></i>
+        </span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">To Shopping list</a></li>
+        <li><a href="#">Edit Recipe</a></li>
+        <li><a href="#">Delete Recipe</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    Description
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    Ingredients
+  </div>
+</div>-->
