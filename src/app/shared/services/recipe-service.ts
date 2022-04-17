@@ -42,7 +42,7 @@ export class RecipeService {
   }
 
   getRecipe(id: number){
-    return this.recipes[id];
+    return this.recipes.slice()[id];
   }
 
   sendIngredientsToShoppingList(ingredients: Ingredient[]){
