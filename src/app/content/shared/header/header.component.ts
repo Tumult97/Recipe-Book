@@ -7,9 +7,6 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   collapsed = true;
-  @Output() optionSelectedEmitter = new EventEmitter<string>();
-  @Input() optionSelected: string;
-
 
   constructor() { }
 
@@ -17,7 +14,6 @@ export class HeaderComponent implements OnInit {
   }
 
   onSelect(option: string) {
-    this.optionSelectedEmitter.emit(option);
   }
 
 }
