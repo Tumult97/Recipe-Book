@@ -7,8 +7,10 @@
 <div class="row">
   <div class="col-xs-12">
     <app-recipe-item
-      *ngFor="let model of recipes"
+      *ngFor="let model of recipes; let indexOfelement=index;"
+      
       [recipe]="model"
+      [index]="indexOfelement"
     ></app-recipe-item>
   </div>
 </div>
