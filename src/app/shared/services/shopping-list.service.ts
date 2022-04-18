@@ -1,8 +1,8 @@
 import {Ingredient} from "../models/ingredient.model";
-import {EventEmitter} from "@angular/core";
+import { Subject } from "rxjs";
 
 export class ShoppingListService{
-  private ingredientAddedEmitter: EventEmitter<void> = new EventEmitter<void>();
+  private ingredientAddedEmitter: Subject<void> = new Subject<void>();
   private shoppingList: Ingredient[] = [
     new Ingredient('Cultured benis',2),
     new Ingredient('Yeeted Tomato',6),
@@ -15,7 +15,7 @@ export class ShoppingListService{
 
   addIngredient(ingredient: Ingredient){
     this.shoppingList.push(ingredient);
-    this.ingredientAddedEmitter.emit();
+    this.ingredientAddedEmitter.next();
   }
 
   addIngredientList(ingredients: Ingredient[]){
@@ -24,7 +24,7 @@ export class ShoppingListService{
 
   addRecipeIngredients(ingredients: Ingredient[]){
     this.shoppingList.push(...ingredients);
-    this.ingredientAddedEmitter.emit();
+    this.ingredientAddedEmitter.next();
   }
 
   getIngredientAddedEmitter(){
@@ -32,6 +32,6 @@ export class ShoppingListService{
   }
 
   emitIngredientAdded(){
-    this.ingredientAddedEmitter.emit();
+    this.ingredientAddedEmitter.next();
   }
 }
