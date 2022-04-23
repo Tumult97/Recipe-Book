@@ -68,7 +68,7 @@ export class RecipeEditComponent implements OnInit {
 		else
 			this.recipeService.addRecipe(recipe);
 
-		this.router.navigate(['recipes', this.id]);
+		this.navigateBackToDetails();
 	}
 
 	onAddIngredient(){
@@ -77,6 +77,10 @@ export class RecipeEditComponent implements OnInit {
 			'amount': new FormControl(null, [Validators.required, Validators.pattern(/^[0-9]+[0-9]*$/)]),
 			'type': new FormControl(null)
 		}));
+	}
+
+	navigateBackToDetails(){
+		this.router.navigate(['../'], {relativeTo: this.route});
 	}
 
 	get controls() { // a getter!
