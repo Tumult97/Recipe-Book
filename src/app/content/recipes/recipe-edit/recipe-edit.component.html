@@ -1,1 +1,102 @@
-<p>recipe-edit works!</p>
+<div class="row">
+    <div class="col-xs-12">
+        <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+            <hr>
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-success">Save</button>
+                    &nbsp;
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input 
+                            class="form-control"
+                            name="name"
+                            formControlName="name"
+                            required
+                            placeholder="Name">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="imagePath">Image URL</label>
+                        <input 
+                            class="form-control"
+                            name="imagePath"
+                            formControlName="imagePath"
+                            required
+                            placeholder="Image URL">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="" alt="" class="img-responsive">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea
+                            class="form-control"
+                            name="description"
+                            formControlName="description"
+                            rows="6"
+                            placeholder="Description"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-xs-12" formArrayName="ingredients">
+                    <div 
+                        class="row" 
+                        style="margin-top: 10px;"
+                        *ngFor="let control of controls; let i = index;"
+                        [formGroupName]="i">
+                        <div class="col-xs-5">
+                            <input 
+                                type="text" 
+                                class="form-control"
+                                formControlName="name"
+                                placeholder="Name"
+                                required>
+                        </div>
+                        <div class="col-xs-3">
+                            <input 
+                                type="number" 
+                                class="form-control"
+                                formControlName="amount"
+                                required
+                                pattern="^[0-9][0-9]*$"
+                                placeholder="Amount">
+                        </div>
+                        <div class="col-xs-3">
+                            <input 
+                                type="text" 
+                                class="form-control"
+                                formControlName="type"
+                                placeholder="Type">
+                        </div>
+                        <div class="col-xs-1">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-info" type="button" (click)="onAddIngredient()"><i class="fa fa-plus fa-solid"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
