@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { ActivatedRoute, Data, Params, Router } from '@angular/router';
 import { reduce } from 'rxjs';
 import {Recipe} from "../../../shared/models/recipe.model";
-import {RecipeService} from "../../../shared/services/recipe-service";
+import {RecipeService} from "../../../shared/services/data/recipe-service";
 
 @Component({
   selector: 'app-recipe-detail',

@@ -3,7 +3,7 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Ingredient } from 'src/app/shared/models/ingredient.model';
 import { Recipe } from 'src/app/shared/models/recipe.model';
-import { RecipeService } from 'src/app/shared/services/recipe-service';
+import { RecipeService } from 'src/app/shared/services/data/recipe-service';
 
 @Component({
 	selector: 'app-recipe-edit',
@@ -60,7 +60,7 @@ export class RecipeEditComponent implements OnInit {
 	onSubmit(){
 
 		//teh value is setup exactly like the saved recipe model
-		//can sub in instead of const 
+		//can sub in instead of const
 		const recipe: Recipe  = this.recipeForm.value;
 
 		if(this.editMode)
